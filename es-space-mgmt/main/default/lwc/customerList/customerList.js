@@ -1,30 +1,26 @@
-import { LightningElement } from 'lwc';
+import { LightningElement, api, wire } from 'lwc';
+import getCustomerList from '@salesforce/apex/reservationManagerController.getCustomerList';
+
 export default class CustomerList extends LightningElement {
-    customers = [
-        {
-            "name": "Test 1",
-            "email": "test1@example.com",
-            "city": "NY",
-            "state": "NY",
-            "status": "Open",
-            "Id": "0000000"
-        },
-        {
-            "name": "Test 2",
-            "email": "test2@example.com",
-            "city": "NY",
-            "state": "NY",
-            "status": "Open",
-            "Id": "0000001"
-        },
-        {
-            "name": "Test 3",
-            "email": "test3@example.com",
-            "city": "NY",
-            "state": "NY",
-            "status": "Open",
-            "Id": "0000002"
+
+    customers = [];
+
+    @api sobject = 'Lead';
+    errorMsg;
+    msgForUser;
+    wiredRecords;
+
+
+    @wire(getCustomerList, { sObjectType: '$sobject' })
+    wiredCustomerData(value) {
+        console.log(JSON.stringify(value));
+        this.wiredRecords = value;
+        if (value.error) {
+            this.errorMsg = value.error;
+            this.msgForUser = 'There was an issue loading customers.';
+        } else if (value.data) {
+            this.customers = value.data;
         }
-    ];
+    }
     
 }
