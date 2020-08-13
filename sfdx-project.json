@@ -2,11 +2,15 @@
   "packageDirectories": [
     {
       "path": "es-base-objects",
-      "default": true
+      "default": false
     },
     {
       "path": "es-base-styles",
       "default": false
+    },
+    {
+      "path": "es-space-mgmt",
+      "default": true
     }
     
   ],

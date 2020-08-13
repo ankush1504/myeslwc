@@ -1,0 +1,12 @@
+<template>
+    <div class="slds-card">
+        <ul class="slds-list_vertical slds-has-dividers_bottom-space">
+            <template for:each={customers} for:item="record">
+                <li class="slds-item" key={record.Id}>
+                    <c-customer-tile object="lead" customer={record}
+                    ></c-customer-tile>
+                </li>
+            </template>
+        </ul>
+    </div>
+</template>
