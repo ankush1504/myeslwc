@@ -1,5 +1,4 @@
 import { LightningElement, api, wire } from 'lwc';
-import { refreshApex } from '@salesforce/apex';
 import getCustomerList from '@salesforce/apex/reservationManagerController.getCustomerList';
 
 export default class CustomerList extends LightningElement {
@@ -22,6 +21,10 @@ export default class CustomerList extends LightningElement {
         } else if (value.data) {
             this.customers = value.data;
         }
+    }
+
+    handleSelect(event) {
+        console.log(event.detail);
     }
     
 }

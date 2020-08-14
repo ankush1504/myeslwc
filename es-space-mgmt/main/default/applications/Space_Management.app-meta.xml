@@ -13,6 +13,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Space Management</label>
     <navType>Console</navType>
+    <tabs>Reservation_Manager</tabs>
     <tabs>Market__c</tabs>
     <tabs>Space__c</tabs>
     <tabs>Reservation__c</tabs>
@@ -23,6 +24,9 @@
     <workspaceConfig>
         <mappings>
             <tab>Market__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Reservation_Manager</tab>
         </mappings>
         <mappings>
             <fieldName>Space__c</fieldName>
