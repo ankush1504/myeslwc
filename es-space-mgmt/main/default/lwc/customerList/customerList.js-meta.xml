@@ -7,7 +7,7 @@
         <target>lightning__HomePage</target>
     </targets>
     <targetConfigs>
-        <targetConfig targets="lightning__AppPage, lightning__HomePage">
+        <targetConfig targets="lightning__AppPage">
             <property name="sobject" datasource="Lead,Contact" type="String" />
         </targetConfig>
     </targetConfigs>
