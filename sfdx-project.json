@@ -1,22 +1,53 @@
 {
   "packageDirectories": [
     {
-      "path": "es-base-objects",
+      "path": "./es-base-objects",
+      "package": "ESObjects",
+      "versionName": "Base Objects v1",
+      "versionNumber": "1.0.0.NEXT",
       "default": false
     },
     {
-      "path": "es-base-styles",
+      "path": "./es-base-styles",
+      "package": "ESBaseStyles",
+      "versionName": "Base Styles v1",
+      "versionNumber": "1.0.0.NEXT",
       "default": false
     },
     {
       "path": "./es-base-code",
-      "default": false
+      "package": "ESBaseCode",
+      "versionName": "Base Code v1",
+      "versionNumber": "1.0.0.NEXT",
+      "default": false,
+      "dependencies": [
+        {
+          "package": "ESObjects",
+          "versionNumber": "1.0.0.LATEST"
+        }
+      ]
     },
     {
-      "path": "es-space-mgmt",
-      "default": true
+      "path": "./es-space-mgmt",
+      "default": true,
+      "package": "ESSpaceMgmt",
+      "versionName": "ESSpaceMgmt v1",
+      "versionNumber": "1.0.0.NEXT",
+      "dependencies": [
+        {
+          "package": "ESObjects",
+          "versionNumber": "1.0.0.LATEST"
+        },
+        {
+          "package": "ESBaseCode",
+          "versionNumber": "1.0.0.LATEST"
+        },
+        {
+          "package": "ESBaseStyles",
+          "versionNumber": "1.0.0.LATEST"
+        }
+      ]
     }
-    
   ],
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
